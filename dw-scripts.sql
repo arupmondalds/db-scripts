@@ -1,3 +1,6 @@
+ALTER SESSION SET CURRENT_SCHEMA = ADVENTUREWORKS;
+
+
 -- 1. AdventureWorksDWBuildVersion
 CREATE TABLE AdventureWorksDWBuildVersion (
     DBVersion VARCHAR2(50),
