@@ -1,4 +1,4 @@
-ALTER SESSION SET CURRENT_SCHEMA = ADVENTUREWORKS;
+--ALTER SESSION SET CURRENT_SCHEMA = ADVENTUREWORKS;
 
 
 -- 1. AdventureWorksDWBuildVersion
@@ -640,6 +640,9 @@ GROUP BY
         ELSE SUBSTR(Model, 1, 1) || SUBSTR(Model, -3)
     END || ' ' || Region,
     (TO_NUMBER(CalendarYear) * 100) + TO_NUMBER(Month),
+    CalendarYear,
+    Month,
+    TO_DATE(CalendarYear || '-' || LPAD(Month, 2, '0') || '-25', 'YYYY-MM-DD');
    
 
 CREATE OR REPLACE VIEW vTargetMail AS
